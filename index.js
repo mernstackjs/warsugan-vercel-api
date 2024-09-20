@@ -8,7 +8,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://warsugan-client-vercel.vercel.app/",
+      "https://warsugan-client-vercel.vercel.app",
     ],
   })
 );
@@ -17,6 +17,9 @@ app.use(express.urlencoded({ extended: false }));
 
 app.get("/", (req, res) => {
   res.json({ message: "API is running success" });
+});
+app.get("/saxid", (req, res) => {
+  res.json({ message: "wax aan saxay /" });
 });
 
 app.use("/api", require("./router/index"));
